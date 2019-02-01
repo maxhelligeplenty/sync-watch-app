@@ -1,0 +1,120 @@
+.room-view
+{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.header-button
+{
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 2px;
+    outline: none;
+    span
+    {
+        font-size: 1rem;
+        font-family: fontawesome;
+    }
+    &:hover
+    {
+        cursor: pointer;
+    }
+}
+
+.chat
+{
+    margin-bottom: 16px;
+    .chat-output
+    {
+        overflow: scroll;
+        height: 33vh;
+        background-color: black;
+    }
+}
+
+.send-message-container
+{
+    display: flex;
+    width: 100%;
+    #send-button
+    {
+        background-color: black;
+        color: white;
+        outline: none;
+        border-left: 1px solid white;
+        outline: none;
+    }
+    .fa-paper-plane
+    {
+        font-family: fontawesome;
+        padding: 10px;
+        font-size: 1.3rem;
+    }
+}
+
+input
+{
+    outline: none;
+    padding: 10px;
+    color: white;
+    background-color: black;
+    border: none;
+    flex-grow: 1;
+}
+
+.playlist
+{
+    .playlist-container
+    {
+        width: 100%;
+        overflow: scroll;
+        height: 33vh;
+        background-color: black;
+    }
+    .video-description
+    {
+        width: 100%;
+        padding: 5px 0 0 5px;
+    }
+    .playlist-item:last-child
+    {
+        border-bottom: none;
+    }
+    .playlist-item
+    {
+        display: flex;
+        width: 100%;
+        background-color: black;
+        padding: 10px 0;
+        border-bottom: 1px solid white;
+        :hover
+        {
+            cursor: pointer;
+        }
+        span
+        {
+            font-family: fontawesome;
+            color: white;
+        }
+    }
+}
+
+.add-video-url-container
+{
+    display: flex;
+    button
+    {
+        background-color: black;
+        color: white;
+        outline: none;
+        border-left: 1px solid white;
+        outline: none;
+        padding: 10px 20px;
+        span
+        {
+            font-size: 1.3rem;
+            font-family: fontawesome;
+        }
+    }
+}

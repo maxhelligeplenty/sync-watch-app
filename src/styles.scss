@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+$fa-font-path: "~font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome';
+@import 'assets/styles/global-components';
+
+body
+{
+    background-color: #191919 !important;
+    color: white !important;
+}
+
+html, body
+{
+    height: 100%;
+}
+
+iframe
+{
+    width: 100% !important;
+    height: 500px !important;
+}
+
+@media (max-width: 575.98px)
+{
+    iframe
+    {
+        width: 100% !important;
+        height: auto !important;
+    }
+}

@@ -1,0 +1,134 @@
+.join-button
+{
+    border-radius: 2px;
+    border: 2px solid white;
+    padding: 20px;
+    position: absolute;
+    background-color: rgb(53, 53, 53);
+    top: 50%;
+    &:hover
+    {
+        transition: 0.3s;
+        cursor: pointer;
+        background-color: transparent;
+    }
+}
+.brand
+{
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 10px;
+    background-color:rgb(53, 53, 53);
+    text-align: center;
+    .brand-icon
+    {
+        font-family: fontawesome;
+        margin-right: 10px;
+    }
+}
+.landing-page
+{
+    position: relative;
+}
+.start-page
+{
+    background-image: url('../../../assets/images/mountains-1412683.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.description-container
+{
+    position: absolute;
+    top: 60%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    h2
+    {
+        font-size: 4rem;
+        font-weight: bold;
+    }
+}
+.main-container
+{
+    height: 100vh;
+}
+.features
+{
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    .title
+    {
+        color: white;
+        font-size: 3rem;
+        font-weight: bolder;
+    }
+    .c-card
+    {
+        padding: 10px;
+        height: 40vh;
+        border-radius: 2px;
+        background-color: #191919;
+        .header
+        {
+            text-align: center;
+            background-color: transparent;
+            margin: -10px;
+            .icon
+            {
+                font-family: fontawesome;
+                font-size: 5rem;
+            }
+        }
+        .body
+        {
+            text-align: center;
+            font-size: 1.5rem;
+        }
+    }
+}
+.support
+{
+    text-align: center;
+    .title
+    {
+        color: white;
+        font-size: 3rem;
+        font-weight: bolder;
+    }
+    .socials
+    {
+        font-family: fontawesome;
+        font-size: 3rem;
+    }
+    .donate
+    {
+        font-family: fontawesome;
+        font-size: 3rem;
+    }
+}
+@media (max-width: 575.98px)
+{
+    .join-button
+    {
+       top:40% !important;
+    }
+    .description-container
+    {
+        top: 50% !important;
+        h2
+        {
+            font-size: 3rem !important;
+        }
+    }
+}
