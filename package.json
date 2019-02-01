@@ -38,7 +38,8 @@
     "copy-to-clipboard": "^3.0.8",
     "font-awesome": "^4.7.0",
     "ngx-youtube-player": "^6.0.0",
-    "random-username-generator": "^1.0.4"
+    "random-username-generator": "^1.0.4",
+    "socket.io": "~2.0.3"
   },
   "devDependencies": {
     "@angular/language-service": "~7.1.0",
