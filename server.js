@@ -24,3 +24,4 @@ server.get('/*', function(req,res) {
 });
 //
 // app.listen(process.env.PORT || 4200);
+server.listen(process.env.PORT || 8080);
