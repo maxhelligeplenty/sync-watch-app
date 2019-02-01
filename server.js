@@ -6,9 +6,9 @@ const path = require('path');
 
 const app = express();
 
-const video_sync_server_1 = require("./video-sync-server");
-const server = new video_sync_server_1.VideoSyncServer().getApp();
-exports.server = server;
+// const video_sync_server_1 = require("./video-sync-server");
+// const server = new video_sync_server_1.VideoSyncServer().getApp();
+// exports.server = server;
 
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/sync-watch-application'));
