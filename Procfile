@@ -1,1 +1,1 @@
-web: ng bßuild && node server.js
+web: ng build && node server.js
