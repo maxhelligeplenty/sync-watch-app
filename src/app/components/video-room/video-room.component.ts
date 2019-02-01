@@ -19,8 +19,9 @@ import * as copy from 'copy-to-clipboard';
 import * as rug from 'random-username-generator';
 import { Router } from '@angular/router';
 
-const SERVER_URL = 'https://sync-watch-application.herokuapp.com:8080';
-// const SERVER_URL = 'http://localhost:8080';
+// const SERVER_URL = process.env.REACT_APP_SOCKET_URL || '/';
+
+const SERVER_URL = 'http://localhost:8080';
 
 @Component({
     selector:    'video-room',
