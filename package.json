@@ -32,7 +32,13 @@
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "typescript": "~3.1.6",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "angular2-cookie-law": "^6.2.0",
+    "bootstrap": "^4.2.1",
+    "copy-to-clipboard": "^3.0.8",
+    "font-awesome": "^4.7.0",
+    "ngx-youtube-player": "^6.0.0",
+    "random-username-generator": "^1.0.4"
   },
   "devDependencies": {
     "@angular/language-service": "~7.1.0",
@@ -50,13 +56,6 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
-    "tslint": "~5.11.0",
-    "angular2-cookie-law": "^6.2.0",
-    "bootstrap": "^4.2.1",
-    "copy-to-clipboard": "^3.0.8",
-    "core-js": "^2.5.4",
-    "font-awesome": "^4.7.0",
-    "ngx-youtube-player": "^6.0.0",
-    "random-username-generator": "^1.0.4"
+    "tslint": "~5.11.0"
   }
 }
