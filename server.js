@@ -5,7 +5,6 @@ const path = require('path');
 const http_1 = require("http");
 const event_interface_1 = require("../sync-watch-application/model/event.interface");
 
-const PORT = process.env.PORT || 8080;
 const app = express();
 
 app.use(express.static(__dirname + '/dist/sync-watch-application'));
@@ -16,9 +15,7 @@ app.get('/*', function (req, res) {
 const server = http_1.createServer(app);
 const io = socketIO(server);
 
-server.listen(PORT, function () {
-    console.log('Running video server on port %s', PORT);
-});
+server.listen(process.env.PORT || 8080);
 
 io.on(event_interface_1.Event.CONNECT, function (socket) {
     console.log('connected');
