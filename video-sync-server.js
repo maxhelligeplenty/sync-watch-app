@@ -3,8 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var http_1 = require("http");
 var express = require("express");
 var socketIo = require("socket.io");
-// var event_interface_1 = require("../sync-watch-application/model/event.interface");
-var event_interface_1 = require("model/event.interface");
+var event_interface_1 = require("../sync-watch-application/model/event.interface");
 var VideoSyncServer = /** @class */ (function () {
     function VideoSyncServer() {
         this.createApp();
@@ -14,7 +13,7 @@ var VideoSyncServer = /** @class */ (function () {
         this.listen();
     }
     VideoSyncServer.prototype.createApp = function () {
-        this.app = express();
+
     };
     VideoSyncServer.prototype.createServer = function () {
         this.server = http_1.createServer(this.app);
