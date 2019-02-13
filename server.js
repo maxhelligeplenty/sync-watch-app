@@ -17,8 +17,6 @@ const io = socketIO(server);
 
 server.listen(process.env.PORT || 8080);
 
-console.log('listen to port 8080');
-
 var Event;
 (function (Event) {
     Event["CONNECT"] = "connect";
@@ -44,7 +42,6 @@ var Event;
 })(Event = exports.Event || (exports.Event = {}));
 
 io.on(Event.CONNECT, function (socket) {
-    console.log('connected');
     var room = '';
     var username = '';
     socket.on(Event.JOIN, function (r, c) {

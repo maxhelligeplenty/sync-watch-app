@@ -30,6 +30,12 @@
         overflow: scroll;
         height: 33vh;
         background-color: black;
+        overflow: -moz-scrollbars-none;
+        -ms-overflow-style: none;
+    }
+    .chat-output::-webkit-scrollbar
+    {
+        width: 0 !important;
     }
 }
 
