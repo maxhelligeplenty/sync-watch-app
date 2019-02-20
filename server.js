@@ -61,10 +61,10 @@ io.on(Event.CONNECT, function (socket) {
         });
     });
     socket.on(Event.PLAY, function () {
-        socket.to(room).emit(Event.PLAY);
+        io.to(room).emit(Event.PLAY);
     });
     socket.on(Event.PAUSE, function () {
-        socket.to(room).emit(Event.PAUSE);
+        io.to(room).emit(Event.PAUSE);
     });
     socket.on(Event.SYNC_TIME, function (t) {
         socket.to(room).emit(Event.SYNC_TIME, t);
