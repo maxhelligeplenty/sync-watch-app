@@ -31,7 +31,7 @@ export class VideoRoomComponent implements OnInit {
     public newMessage: string;
     public currentRoomMember: Array<UserInterface> = [];
 
-    public videoId: string = "xfr-OiX-46w";
+    public videoId: string = "L_LUpnjgPso";
 
     private isReady: boolean = false;
     private user: UserInterface;
@@ -224,11 +224,12 @@ export class VideoRoomComponent implements OnInit {
                 case 1:
                     if (this.user.status === UserEnum.JOINING) {
                         this.syncData.socket.emit(Event.ASK_VIDEO_TIME, this.user.id);
+                        this.syncData.player.playVideo();
                         this.user.status = UserEnum.JOINED;
                     }
                     else if (this.user.status === UserEnum.SEEKING) {
-                        this.syncData.socket.emit(Event.SYNC_TIME, this.syncData.player.getCurrentTime());
                         this.syncData.socket.emit(Event.PLAY);
+                        this.syncData.socket.emit(Event.SYNC_TIME, this.syncData.player.getCurrentTime());
                         this.user.status = UserEnum.JOINED;
                     }
                     else {
