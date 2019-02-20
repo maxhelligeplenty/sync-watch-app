@@ -159,6 +159,7 @@ export class VideoRoomComponent implements OnInit {
                 videoId: this.getVideoId(videoInfo.url),
                 startSeconds: videoInfo.time
             });
+            this.syncData.player.playVideoAt(videoInfo.time);
         });
 
         this.socket.on(Event.ALERT_MEMBERS_NEW_USER, (user: UserInterface) => {
