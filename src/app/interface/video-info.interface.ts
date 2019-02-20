@@ -1,4 +1,4 @@
 export interface VideoInfoInterface {
-    url:string;
-    time:number;
+    url: string;
+    time: number;
 }

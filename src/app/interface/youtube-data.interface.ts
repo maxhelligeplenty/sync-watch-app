@@ -1,5 +1,4 @@
-export interface YoutubeDataInterface
-{
-    thumbnail:string;
-    title:string;
+export interface YoutubeDataInterface {
+    thumbnail: string;
+    title: string;
 }

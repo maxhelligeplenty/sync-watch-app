@@ -31,7 +31,7 @@ export class VideoRoomComponent implements OnInit {
     public newMessage: string;
     public currentRoomMember: Array<UserInterface> = [];
 
-    public videoId: string = "L_LUpnjgPso";
+    public videoId: string = 'm3eMBErXMYE';
 
     private isReady: boolean = false;
     private user: UserInterface;
@@ -70,7 +70,7 @@ export class VideoRoomComponent implements OnInit {
 
     public navigateToStartPage(): void {
         this.syncData.socket.emit().destroy();
-        this.router.navigateByUrl("/start");
+        this.router.navigateByUrl('/start');
     }
 
     public savePlayer(player: YT.Player): void {
@@ -112,10 +112,9 @@ export class VideoRoomComponent implements OnInit {
             this.user = {
                 id: this.syncData.clientId,
                 name: rug.generate(),
-                role: "member",
+                role: 'member',
                 status: UserEnum.JOINING
             };
-
             this.syncData.socket.emit(Event.JOIN, this.syncData.room, this.user.name);
             this.syncData.socket.emit(Event.ALERT_MEMBERS_NEW_USER, this.user);
             this.syncData.socket.emit(Event.ASK_VIDEO_INFORMATION, this.socket.id);
@@ -186,28 +185,6 @@ export class VideoRoomComponent implements OnInit {
         this.socket.on(Event.SYNC_STATUS, (status: number) => {
             this.changeState(status);
         });
-
-        //this.socket.on(Event.GET_USER_ROLE, (userList:Array<UserInterface>) =>
-        //{
-        //    // TODO Replace with enum
-        //    console.log(userList);
-        //    let checkIfHostExists:UserInterface = userList.find((user:UserInterface) =>
-        //    {
-        //        return user.role === 'host'
-        //    });
-        //    console.log(checkIfHostExists);
-        //
-        //    if(isNullOrUndefined(checkIfHostExists))
-        //    {
-        //        this.user.role = 'host';
-        //    }
-        //    console.log(this.user);
-        //});
-        //this.socket.on(Event.SYNC_HOST);
-        //
-        //this.socket.on(Event.ASK_FOR_SYNC_TIME, ());
-        //this.socket.on(Event.SYNC_TIME_BY_HOST, ())
-
     }
 
     private syncVideoTime(time: number): void {
@@ -226,13 +203,11 @@ export class VideoRoomComponent implements OnInit {
                         this.syncData.socket.emit(Event.ASK_VIDEO_TIME, this.user.id);
                         this.syncData.player.playVideo();
                         this.user.status = UserEnum.JOINED;
-                    }
-                    else if (this.user.status === UserEnum.SEEKING) {
+                    } else if (this.user.status === UserEnum.SEEKING) {
                         this.syncData.socket.emit(Event.PLAY);
                         this.syncData.socket.emit(Event.SYNC_TIME, this.syncData.player.getCurrentTime());
                         this.user.status = UserEnum.JOINED;
-                    }
-                    else {
+                    } else {
                         this.syncData.socket.emit(Event.PLAY);
                     }
                     break;
@@ -251,8 +226,8 @@ export class VideoRoomComponent implements OnInit {
 
     private getVideoId(url): string {
         if (!isNullOrUndefined(url) && !isNullOrUndefined(this.syncData.player)) {
-            let idRegex: RegExp = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i;
-            let videoId: string = url.split(idRegex)[1];
+            const idRegex: RegExp = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i;
+            const videoId: string = url.split(idRegex)[1];
             return videoId;
         }
     }
