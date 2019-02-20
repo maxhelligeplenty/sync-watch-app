@@ -31,7 +31,7 @@ export class VideoRoomComponent implements OnInit {
     public newMessage: string;
     public currentRoomMember: Array<UserInterface> = [];
 
-    public videoId: string = 'm3eMBErXMYE';
+    public videoId: string = "m3eMBErXMYE";
 
     private isReady: boolean = false;
     private user: UserInterface;
@@ -70,7 +70,7 @@ export class VideoRoomComponent implements OnInit {
 
     public navigateToStartPage(): void {
         this.syncData.socket.emit().destroy();
-        this.router.navigateByUrl('/start');
+        this.router.navigateByUrl("/start");
     }
 
     public savePlayer(player: YT.Player): void {
@@ -112,7 +112,7 @@ export class VideoRoomComponent implements OnInit {
             this.user = {
                 id: this.syncData.clientId,
                 name: rug.generate(),
-                role: 'member',
+                role: "member",
                 status: UserEnum.JOINING
             };
             this.syncData.socket.emit(Event.JOIN, this.syncData.room, this.user.name);
@@ -156,10 +156,8 @@ export class VideoRoomComponent implements OnInit {
 
         this.socket.on(Event.SYNC_VIDEO_INFORMATION, (videoInfo: VideoInfoInterface) => {
             this.syncData.player.loadVideoById({
-                videoId: this.getVideoId(videoInfo.url),
-                startSeconds: videoInfo.time
+                videoId: this.getVideoId(videoInfo.url)
             });
-            this.syncData.player.playVideoAt(videoInfo.time);
         });
 
         this.socket.on(Event.ALERT_MEMBERS_NEW_USER, (user: UserInterface) => {
@@ -202,22 +200,20 @@ export class VideoRoomComponent implements OnInit {
                 case 1:
                     if (this.user.status === UserEnum.JOINING) {
                         this.syncData.socket.emit(Event.ASK_VIDEO_TIME, this.user.id);
-                        this.syncData.player.playVideo();
                         this.user.status = UserEnum.JOINED;
                     } else if (this.user.status === UserEnum.SEEKING) {
-                        this.syncData.socket.emit(Event.PLAY);
                         this.syncData.socket.emit(Event.SYNC_TIME, this.syncData.player.getCurrentTime());
                         this.user.status = UserEnum.JOINED;
-                    } else {
-                        this.syncData.socket.emit(Event.PLAY);
                     }
+                    this.syncData.socket.emit(Event.PLAY);
                     break;
                 case 2:
                     this.syncData.socket.emit(Event.PAUSE);
                     break;
                 case 3:
-                    this.user.status = UserEnum.SEEKING;
-                    this.syncData.player.playVideo();
+                    if (this.user.status !== UserEnum.JOINING) {
+                        this.user.status = UserEnum.SEEKING;
+                    }
                     break;
                 default:
                     break;
