@@ -1,5 +1,5 @@
 import * as socketIo from 'socket.io-client';
-import { Event } from './../../interface/event.interface';
+import { Event } from '../../interface/event.interface';
 import { Component, OnInit } from '@angular/core';
 @Component
 ({

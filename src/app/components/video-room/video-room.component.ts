@@ -1,3 +1,4 @@
+import { AlertType } from './../alert/data/alert-types.enum';
 import {Component, Input, OnInit} from "@angular/core";
 import {SyncVideoInterface} from "../../interface/sync-video.interface";
 import {Message} from "../../interface/message.interface";
@@ -11,6 +12,7 @@ import * as socketIo from "socket.io-client";
 import * as copy from "copy-to-clipboard";
 import * as rug from "random-username-generator";
 import {Router} from "@angular/router";
+import { AlertService } from '../alert/alert.service';
 
 // const SERVER_URL = process.env.REACT_APP_SOCKET_URL || '/';
 
@@ -37,13 +39,12 @@ export class VideoRoomComponent implements OnInit {
     private user: UserInterface;
     private socket;
 
-    constructor(private youtubeVideoDataService: YoutubeVideoDataService,
-                private router: Router) {
 
+    constructor(private youtubeVideoDataService: YoutubeVideoDataService,
+                private router: Router, private alertService:AlertService) {
     }
 
     public ngOnInit(): void {
-
     }
 
     public addNewVideoUrl(url: string): void {
@@ -58,6 +59,7 @@ export class VideoRoomComponent implements OnInit {
                         (res.items[0].snippet.localized.title.length > 24 ? "..." : "")
                     }
                 };
+                this.alertService.add({message: 'Added new video to playlist', type: AlertType.success, dismiss: 5000});
                 this.syncData.socket.emit(Event.NEW_VIDEO, videoData);
             });
             this.newVideoUrl = undefined;
@@ -65,6 +67,7 @@ export class VideoRoomComponent implements OnInit {
     }
 
     public copyInviteLinkToClipboard(): void {
+        this.alertService.add({message: 'Copied link to clipboard !', type: AlertType.neutral, dismiss: 5000});
         copy(document.location.href);
     }
 

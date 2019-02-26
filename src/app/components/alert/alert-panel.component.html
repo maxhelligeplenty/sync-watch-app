@@ -1,0 +1,3 @@
+<div class="alert-panel" *ngFor="let alert of alertService.alerts">
+    <alert [dismiss]="alert.dismiss" [type]="alert.type" [message]="alert.message"></alert>
+</div>

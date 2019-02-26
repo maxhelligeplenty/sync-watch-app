@@ -1,0 +1,41 @@
+.danger {
+  background-color: rgb(255, 79, 79);
+  color: white;
+}
+.info {
+  background-color: rgb(79, 243, 255);
+  color: white;
+}
+.success {
+  background-color: rgb(41, 186, 74);
+  color: white;
+}
+.warning {
+  background-color: rgb(255, 167, 73);
+  color: white;
+}
+
+.neutral
+{
+    background-color: rgb(77, 77, 77);
+    color: white;
+}
+
+.c-alert {
+  padding: 10px;
+  border-radius: 2px;
+  width: auto;
+  transition: all 1.5s ease;
+  .close {
+    font-family: "fontawesome";
+    float: right;
+    text-shadow: none !important;
+    color: white !important;
+    opacity: 1;
+  }
+  .message {
+    max-width: 25vw;
+    word-wrap: break-word;
+  }
+}
+

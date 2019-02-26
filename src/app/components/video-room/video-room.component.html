@@ -1,17 +1,22 @@
+<alert-panel></alert-panel>
 <div class="room-view container-fluid">
     <div class="row">
         <div class="col-md-3 col-lg-8">
-            <button class="float-left header-button"
-                    (click)="navigateToStartPage()">
+            <div class="a-button btn float-left">
+                <button type="button"
+                (click)="navigateToStartPage()">
                 <span class="fas fa-home mr-1"></span>
                 Home
             </button>
+            </div>
         </div>
         <div class="col-md-9 col-lg-4">
-            <button type="button" class="header-button float-right"
-                    (click)="copyInviteLinkToClipboard()">Invite Friends
-                <span class="fas fa-user-plus"></span>
+            <div class="a-button btn float-right">
+                    <button type="button"
+                    (click)="copyInviteLinkToClipboard()">
+                <span class="fas fa-user-plus mr-1"></span>Invite Friends
             </button>
+            </div>
         </div>
     </div>
     <div class="row">
@@ -55,8 +60,8 @@
                 </div>
             </div>
             <div class="playlist">
-                <h3>PLAYLIST</h3>
-                <div class="playlist-container">
+                <span>Playlist</span>
+                <div class="playlist-container p-3">
                     <div *ngFor="let video of videoHistoryList" class="playlist-item" (click)="playNewVideoById(video.videoId)">
                         <img [src]="video.videoData.thumbnail">
                         <div class="video-description">{{video.videoData.title}}</div>

@@ -1,3 +1,6 @@
+import { AlertPanelComponent } from './components/alert/alert-panel.component';
+import { AlertComponent } from './components/alert/alert.component';
+import { AlertService } from './components/alert/alert.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReportBetaComponent } from './components/report-beta/report-beta.component';
 import { BetaReportViewComponent } from './views/beta-report-view/beta-report-view.component';
@@ -34,7 +37,9 @@ import { ImpressumViewComponent } from './views/impressum-view/impressum-view.co
         ReportBetaComponent,
         FooterComponent,
         ImpressumComponent,
-        ImpressumViewComponent
+        ImpressumViewComponent,
+        AlertComponent,
+        AlertPanelComponent
     ],
     imports:      [
         BrowserModule,
@@ -47,7 +52,7 @@ import { ImpressumViewComponent } from './views/impressum-view/impressum-view.co
             routes
         ),
     ],
-    providers:    [YoutubeVideoDataService],
+    providers:    [YoutubeVideoDataService, AlertService],
     bootstrap:    [AppComponent]
 })
 export class AppModule

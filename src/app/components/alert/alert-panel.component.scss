@@ -1,0 +1,18 @@
+.alert-panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 15px;
+    z-index: 100;
+    max-width: 30vw;
+    height: auto;
+  }
+
+@media (max-width: 800px)
+{
+    .alert-panel
+    {
+        max-width: 80vw !important;        
+    }
+}
