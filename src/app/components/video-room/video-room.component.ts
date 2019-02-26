@@ -59,7 +59,7 @@ export class VideoRoomComponent implements OnInit {
                         (res.items[0].snippet.localized.title.length > 24 ? "..." : "")
                     }
                 };
-                this.alertService.add({message: 'Added new video to playlist', type: AlertType.success, dismiss: 5000});
+                this.alertService.add({message: 'Added new video to playlist', type: AlertType.neutral, dismiss: 3000});
                 this.syncData.socket.emit(Event.NEW_VIDEO, videoData);
             });
             this.newVideoUrl = undefined;

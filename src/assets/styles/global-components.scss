@@ -16,3 +16,156 @@ button
         text-decoration: underline !important;
     }
 }
+
+
+.a-button button {
+    outline: none;
+    color: white;
+    background: transparent;
+    border: none;
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    &:hover {
+      background: transparent;
+      color: #64ffdd;
+      &:before, &:after {
+        -webkit-transition: all 0.7s ease;
+        transition: all 0.7s ease;
+        width: 100%;
+      }
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0px;
+      width: 0px;
+      height: 3px;
+      background: #dadada;
+      transition: all 0.4s ease;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0px;
+      width: 0px;
+      height: 3px;
+      background: #dadada;
+      transition: all 0.4s ease;
+      top: inherit;
+      left: inherit;
+      bottom: 0;
+      right: 0;
+    }
+    span
+    {
+        font-size: 1rem;
+        font-family: fontawesome;
+    }
+  }
+  
+  .btn {
+    display: block;
+  }
+  
+  button {
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    color: #fff;
+    position: relative;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    text-transform: uppercase;
+    a {
+      text-decoration: none;
+    }
+  }
+  
+  @-moz-keyframes cloud-animation {
+    100% {
+      background-position: 0px 2em;
+    }
+  }
+  
+  
+  @-webkit-keyframes cloud-animation {
+    100% {
+      background-position: 0px 2em;
+    }
+  }
+  
+  
+  @-o-keyframes cloud-animation {
+    100% {
+      background-position: 0px 2em;
+    }
+  }
+  
+  
+  @keyframes cloud-animation {
+    100% {
+      background-position: 0px 2em;
+    }
+  }
+  
+  
+  @-moz-keyframes witch-word-color {
+    0% {
+      color: #d3b7f7;
+    }
+  
+    50% {
+      color: #50514f;
+    }
+  
+    100% {
+      color: #fff;
+    }
+  }
+  
+  
+  @-webkit-keyframes witch-word-color {
+    0% {
+      color: #d3b7f7;
+    }
+  
+    50% {
+      color: #50514f;
+    }
+  
+    100% {
+      color: #fff;
+    }
+  }
+  
+  
+  @-o-keyframes witch-word-color {
+    0% {
+      color: #d3b7f7;
+    }
+  
+    50% {
+      color: #50514f;
+    }
+  
+    100% {
+      color: #fff;
+    }
+  }
+  
+  
+  @keyframes witch-word-color {
+    0% {
+      color: #d3b7f7;
+    }
+  
+    50% {
+      color: #50514f;
+    }
+  
+    100% {
+      color: #fff;
+    }
+  }

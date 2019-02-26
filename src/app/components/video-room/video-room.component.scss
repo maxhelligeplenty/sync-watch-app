@@ -19,6 +19,7 @@
     &:hover
     {
         cursor: pointer;
+        color: #64ffdd;
     }
 }
 
@@ -28,7 +29,7 @@
     .chat-output
     {
         overflow: scroll;
-        height: 33vh;
+        height: 50vh;
         background-color: black;
         overflow: -moz-scrollbars-none;
         -ms-overflow-style: none;
@@ -51,6 +52,11 @@
         outline: none;
         border-left: 1px solid white;
         border-radius: 0;
+        &:hover
+        {
+            color: #64ffdd !important;
+            cursor: pointer;
+        }
     }
     .fa-paper-plane
     {
@@ -70,46 +76,23 @@ input
     flex-grow: 1;
 }
 
-.playlist
+.playlist-container
 {
-    .playlist-container
-    {
-        width: 100%;
-        overflow: scroll;
-        overflow-x: none;
-        height: 33vh;
-        background-color: black;
-        overflow: -moz-scrollbars-none;
-        -ms-overflow-style: none;
-    }
-    .playlist-container::-webkit-scrollbar
-    {
-        width: 0 !important;
-    }
-    .video-description
-    {
-        width: 100%;
-        padding: 5px 0 0 5px;
-    }
-    .playlist-item:last-child
-    {
-        border-bottom: none;
-    }
+    display: flex;
+    margin-bottom: 5vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
     .playlist-item
     {
-        display: flex;
-        width: 100%;
+        margin-right: 10px;
+        padding: 5px 10px;
         background-color: black;
-        padding: 10px 0;
-        border-bottom: 1px solid white;
-        :hover
+        width: 140px;
+        border-radius: 3px;
+        &:hover
         {
             cursor: pointer;
-        }
-        span
-        {
-            font-family: fontawesome;
-            color: white;
+            opacity: 0.5;
         }
     }
 }
@@ -130,6 +113,11 @@ input
             font-size: 1.3rem;
             font-family: fontawesome;
         }
+        &:hover
+        {
+            color: #64ffdd !important;
+            cursor: pointer;
+        }
     }
 }
 
@@ -142,155 +130,3 @@ input
         width: 100%;
     }
 }
-
-@import url("https://fonts.googleapis.com/css?family=Lato:400,100,300,700,100italic,300italic,400italic,700italic,900,900italic");
-.a-button button {
-    color: white;
-    background: transparent;
-    border: none;
-    -webkit-transition: all 0.7s ease;
-    transition: all 0.7s ease;
-    &:hover {
-      background: transparent;
-      color: #64ffdd;
-      &:before, &:after {
-        -webkit-transition: all 0.7s ease;
-        transition: all 0.7s ease;
-        width: 100%;
-      }
-    }
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0px;
-      width: 0px;
-      height: 3px;
-      background: #dadada;
-      transition: all 0.4s ease;
-    }
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0px;
-      width: 0px;
-      height: 3px;
-      background: #dadada;
-      transition: all 0.4s ease;
-      top: inherit;
-      left: inherit;
-      bottom: 0;
-      right: 0;
-    }
-    span
-    {
-        font-size: 1rem;
-        font-family: fontawesome;
-    }
-  }
-  
-  .btn {
-    display: block;
-  }
-  
-  button {
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
-    color: #fff;
-    position: relative;
-    letter-spacing: 0.1em;
-    font-weight: 400;
-    text-transform: uppercase;
-    a {
-      text-decoration: none;
-    }
-  }
-  
-  @-moz-keyframes cloud-animation {
-    100% {
-      background-position: 0px 2em;
-    }
-  }
-  
-  
-  @-webkit-keyframes cloud-animation {
-    100% {
-      background-position: 0px 2em;
-    }
-  }
-  
-  
-  @-o-keyframes cloud-animation {
-    100% {
-      background-position: 0px 2em;
-    }
-  }
-  
-  
-  @keyframes cloud-animation {
-    100% {
-      background-position: 0px 2em;
-    }
-  }
-  
-  
-  @-moz-keyframes witch-word-color {
-    0% {
-      color: #d3b7f7;
-    }
-  
-    50% {
-      color: #50514f;
-    }
-  
-    100% {
-      color: #fff;
-    }
-  }
-  
-  
-  @-webkit-keyframes witch-word-color {
-    0% {
-      color: #d3b7f7;
-    }
-  
-    50% {
-      color: #50514f;
-    }
-  
-    100% {
-      color: #fff;
-    }
-  }
-  
-  
-  @-o-keyframes witch-word-color {
-    0% {
-      color: #d3b7f7;
-    }
-  
-    50% {
-      color: #50514f;
-    }
-  
-    100% {
-      color: #fff;
-    }
-  }
-  
-  
-  @keyframes witch-word-color {
-    0% {
-      color: #d3b7f7;
-    }
-  
-    50% {
-      color: #50514f;
-    }
-  
-    100% {
-      color: #fff;
-    }
-  }

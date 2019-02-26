@@ -25,7 +25,7 @@
                             (ready)="savePlayer($event)"
                             (change)="onStateChange()">
             </youtube-player>
-            <div class="add-video-url-container mb-3">
+            <div class="add-video-url-container mb-1">
                 <input [(ngModel)]="newVideoUrl"
                        type="text"
                        placeholder="Add video url to playlist"
@@ -59,15 +59,16 @@
                     </button>
                 </div>
             </div>
-            <div class="playlist">
-                <span>Playlist</span>
-                <div class="playlist-container p-3">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-9">
+                <div class="playlist-container">
                     <div *ngFor="let video of videoHistoryList" class="playlist-item" (click)="playNewVideoById(video.videoId)">
                         <img [src]="video.videoData.thumbnail">
                         <div class="video-description">{{video.videoData.title}}</div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 </div>
