@@ -3,7 +3,6 @@ const express = require('express');
 const socketIO = require('socket.io');
 const path = require('path');
 const http_1 = require("http");
-// const event_interface_1 = require("/model/event.interface");
 
 const app = express();
 
@@ -104,3 +103,12 @@ io.on(Event.CONNECT, function (socket) {
         socket.to(socketId).emit(Event.SYNC_STATUS, s);
     });
 });
+
+setInterval(function () {
+    var date = new Date();
+    var hour = date.getHours();
+    if(hour >= 10 && hour <= 2)
+    {
+        http_1.get("http://sync-watch-application.herokuapp.com");
+    }
+}, 300000);
