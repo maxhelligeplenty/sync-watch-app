@@ -4,18 +4,18 @@
         <div class="col-md-3 col-lg-8">
             <div class="a-button btn float-left">
                 <button type="button"
-                (click)="navigateToStartPage()">
-                <span class="fas fa-home mr-1"></span>
-                Home
-            </button>
+                        (click)="navigateToStartPage()">
+                    <span class="fas fa-home mr-1"></span>
+                    Home
+                </button>
             </div>
         </div>
         <div class="col-md-9 col-lg-4">
             <div class="a-button btn float-right">
-                    <button type="button"
-                    (click)="copyInviteLinkToClipboard()">
-                <span class="fas fa-user-plus mr-1"></span>Invite Friends
-            </button>
+                <button type="button"
+                        (click)="copyInviteLinkToClipboard()">
+                    <span class="fas fa-user-plus mr-1"></span>Invite Friends
+                </button>
             </div>
         </div>
     </div>
@@ -63,12 +63,13 @@
     </div>
     <div class="row">
         <div class="col-lg-9">
-                <div class="playlist-container">
-                    <div *ngFor="let video of videoHistoryList" class="playlist-item" (click)="playNewVideoById(video.videoId)">
-                        <img [src]="video.videoData.thumbnail">
-                        <div class="video-description">{{video.videoData.title}}</div>
-                    </div>
+            <div class="playlist-container">
+                <div *ngFor="let video of videoHistoryList" class="playlist-item"
+                     (click)="playNewVideoById(video.videoId)">
+                    <img [src]="video.videoData.thumbnail">
+                    <div class="video-description">{{video.videoData.title}}</div>
                 </div>
+            </div>
         </div>
     </div>
 </div>

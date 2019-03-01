@@ -82,6 +82,9 @@ input
     margin-bottom: 5vh;
     overflow-x: scroll;
     overflow-y: hidden;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    
     .playlist-item
     {
         margin-right: 10px;
@@ -95,6 +98,11 @@ input
             opacity: 0.5;
         }
     }
+}
+
+.playlist-container::-webkit-scrollbar
+{
+    width: 0 !important;
 }
 
 .add-video-url-container
